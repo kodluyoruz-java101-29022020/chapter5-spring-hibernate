@@ -10,8 +10,10 @@ import org.springframework.stereotype.Component;
 import com.company.project.annotation.Logger;
 import com.company.project.annotation.enums.LogTimeUnit;
 import com.company.project.dao.entity.Employee;
+import com.company.project.dao.entity.Title;
 import com.company.project.dao.model.EmployeeProfile;
 import com.company.project.service.EmployeeService;
+import com.company.project.service.TitleService;
 
 @Component
 public class ConsoleApplication implements CommandLineRunner {
@@ -19,20 +21,34 @@ public class ConsoleApplication implements CommandLineRunner {
 	@Autowired
 	private EmployeeService employeeService;
 	
+	@Autowired
+	private TitleService titleService;
+	
+	
+	
 	@Override
 	public void run(String... args) throws Exception {
 		
+		
+		//List<Title> titles = titleService.findAll();
+		
+		/*
+		for(Title title : titles) {
+			System.out.println(title);
+		}
+		*/
+		
 		// selectAllEmployees();
 		
-		loadEmployeeProfile();
+		// loadEmployeeProfile();
 		
-		// insertEmployee();
+		insertEmployee();
 		
 		// updateEmployee();
 		
 		// deleteEmployee();
 		
-		insertEmployeeWithAnnotation();
+		// insertEmployeeWithAnnotation();
 		
 	}
 	

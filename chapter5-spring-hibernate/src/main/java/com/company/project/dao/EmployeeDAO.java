@@ -51,7 +51,7 @@ public class EmployeeDAO
 		
 		Session session = sessionFactory.openSession();
 		
-		Query<EmployeeProfile> query = session.createQuery("select new com.company.project.dao.model.EmployeeProfile(e, dept.name) from Employee e left outer join e.departments dept where e.empNo = :empNo", EmployeeProfile.class);
+		Query<EmployeeProfile> query = session.createQuery("select new com.company.project.dao.model.EmployeeProfile(e, dept.name) from Employee e inner join e.departments dept where e.empNo = :empNo", EmployeeProfile.class);
 		
 		query.setParameter("empNo", empNo);
 		
